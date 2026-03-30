@@ -15,7 +15,6 @@ sounds from mixkit.co
 
 todo list 
 - cute animation
-- math to show how long the routine will take
 - colors or styling
 - add images
 

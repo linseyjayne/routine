@@ -14,7 +14,8 @@ const exercises = [
   { name: "Hamstring Dip", sets: 3, time: 30, rest: 7 },
   { name: "Frankenstein Kicks", sets: 3, time: 30, rest: 7 },
   { name: "Side Lying Hip Abduction", sets: 3, time: 30, rest: 7 },
-];
+]; // 3 reps * (30 + 7) = 111 seconds, ~2min
+// ~2min * 9 exercises =  ~18min
 
 let currentExerciseIndex = 0;
 let currentExercise = exercises[currentExerciseIndex];
