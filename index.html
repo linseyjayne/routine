@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
-    <head><script src="./script.js" defer> </script></head>
+    <head>
+        <script src="./script.js" defer> </script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
     <body>
         
-        <div>
-            <p>do your routine</p>
+        <div class="header">
+            <h1>stretch your hamstring</h1>
+        </div>
+       <div class="dynamic-text">
+            <p>
+                <span id="displayText"></span> <br />
+                <span id="statusText"></span> <br />
+                <span id="timeOutput"></span> <br />
+            </p>
+        </div>
+        <div class="control-buttons">
             <button id="startBtn">start</button>
-        </div>
-       <div>
-            <span id="displayText"></span> <br />
-            <span id="statusText"></span> <br />
-            <span id="timeOutput"></span> <br />
-        </div>
-        <div>
             <button id="pauseBtn">pause</button>
         </div>
     </body>

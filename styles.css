@@ -1,0 +1,46 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    font-family: Gill Sans, sans-serif;
+}
+.header {
+    margin: auto;
+}
+
+.dynamic-text {
+    margin: auto;
+    font-size: 16px;
+
+    #timeOutput {
+        font-size: 36px;
+    }
+}
+
+.control-buttons {
+    padding: 16px;
+
+    button {
+        font-size: 24px;
+        padding: 16px;
+        width: 20%;
+        @media (max-width: 480px) {
+            font-size: 36px;
+            width: 100%;
+            margin-bottom: 24px;
+        }
+    }
+
+    #startBtn {
+        margin-right: 24px;
+        @media (max-width: 480px) {
+            margin-right: 0px;
+        }
+    }
+}

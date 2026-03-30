@@ -26,15 +26,23 @@ let isResting = false;
 let startingTime = null;
 
 startButton.addEventListener('click', () => {
+  if (running) {
+    startButton.textContent = 'start';
+  } else {
+    startButton.textContent = 'stop';
+  }
   running = !running;
   displayText.textContent = currentExercise.name;
   startingTime = Date.now();
-  startButton.textContent = "stop";
 });
 
 pauseButton.addEventListener('click', () => {
+  if (running) {
+    pauseButton.textContent = 'paused';
+  } else {
+    pauseButton.textContent = 'pause';
+  }
   running = !running;
-  displayText.textContent = `${currentExercise.name} paused!`;
 });
 
 let lastTime = Date.now();
