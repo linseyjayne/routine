@@ -11,11 +11,13 @@ why is it this way
 - i wanted to make something simple without giving it away to ai 
 - it didnt take me forever to make a bunch of decisions and i have something i can use now
 
+sounds from mixkit.co
+
 todo list 
-- css of course
-- add sound on change
 - cute animation
-- math to show how long it's gonna take
+- math to show how long the routine will take
+- colors or styling
+- add images
 
 questions to answer
 - is there a better way to manage state variables in javascript
@@ -23,3 +25,4 @@ questions to answer
 - what if there was a slider so you could skip ahead in your routine
 - what if we labeled like dynamic things vs things that actually should be held for 30 seconds
 - what if we had a short version
+- skip button, rewind button?

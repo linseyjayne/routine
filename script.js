@@ -3,7 +3,6 @@ const startButton = document.querySelector('#startBtn');
 const pauseButton = document.querySelector('#pauseBtn');
 const displayText = document.querySelector('#displayText');
 const timeOutput = document.querySelector('#timeOutput');
-const statusText = document.querySelector('#statusText');
 
 const exercises = [
   { name: "Hamstring stretch with foot on step", sets: 3, time: 30, rest: 7 },
@@ -61,17 +60,18 @@ const tick = () => {
         if (currentSet < currentExercise.sets) {
           if (!isResting) {
             isResting = true;
-            statusText.textContent = 'resting';
+            displayText.textContent = 'Rest';
+            playAttentionBell();
             currentSet++;
           } else if (isResting) {
             isResting = false;
-            statusText.textContent = 'working';
+            displayText.textContent = currentExercise.name;
+            playFairyMagic();
           } 
         } else {
           // reset values
           currentSet = 0;
           isResting = false;
-          statusText.textContent = "";
           timeOutput.textContent = "";
 
           if (currentExerciseIndex + 1 < exercises.length) {
@@ -91,4 +91,12 @@ const tick = () => {
     requestAnimationFrame(tick);
   }
 
+
+function playAttentionBell() {
+  document.getElementById("attentionBell").play();
+}
+
+function playFairyMagic() {
+  document.getElementById("fairyMagic").play();
+}
 tick();
