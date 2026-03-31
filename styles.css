@@ -31,7 +31,7 @@ body {
     }
 }
 
-.control-buttons {
+.start-button-container {
     padding: 16px;
 
     button {
@@ -50,13 +50,6 @@ body {
 
         &:active {
             background-color: rgb(183, 192, 229);
-        }
-    }
-
-    #startBtn {
-        margin-right: 24px;
-        @media (max-width: 480px) {
-            margin-right: 0px;
         }
     }
 }

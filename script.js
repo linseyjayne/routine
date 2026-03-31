@@ -1,6 +1,5 @@
 // query selectors
 const startButton = document.querySelector('#startBtn');
-const pauseButton = document.querySelector('#pauseBtn');
 const displayText = document.querySelector('#displayText');
 const timeOutput = document.querySelector('#timeOutput');
 const image = document.querySelector("#exerciseImage");
@@ -30,21 +29,12 @@ startButton.addEventListener('click', () => {
   if (running) {
     startButton.textContent = 'start';
   } else {
-    startButton.textContent = 'stop';
+    startButton.textContent = 'pause';
   }
   running = !running;
   displayText.textContent = currentExercise.name;
   image.src = `./assets/${currentExercise.image}`;
   startingTime = Date.now();
-});
-
-pauseButton.addEventListener('click', () => {
-  if (running) {
-    pauseButton.textContent = 'paused';
-  } else {
-    pauseButton.textContent = 'pause';
-  }
-  running = !running;
 });
 
 let lastTime = Date.now();
@@ -93,8 +83,7 @@ const tick = () => {
     }
     
     requestAnimationFrame(tick);
-  }
-
+}
 
 function playAttentionBell() {
   document.getElementById("attentionBell").play();
