@@ -3,17 +3,18 @@ const startButton = document.querySelector('#startBtn');
 const pauseButton = document.querySelector('#pauseBtn');
 const displayText = document.querySelector('#displayText');
 const timeOutput = document.querySelector('#timeOutput');
+const image = document.querySelector("#exerciseImage");
 
 const exercises = [
-  { name: "Hamstring stretch with foot on step", sets: 3, time: 30, rest: 7 },
-  { name: "Kneeling Quad Stretch", sets: 3, time: 30, rest: 7 },
-  { name: "Single Leg Heel Raise", sets: 3, time: 30, rest: 7 },
-  { name: "Hip Flexor Stretch", sets: 3, time: 30, rest: 7 },
-  { name: "Standing Calf Stretch", sets: 3, time: 30, rest: 7 },
-  { name: "Quad Pull", sets: 3, time: 30, rest: 7 },
-  { name: "Hamstring Dip", sets: 3, time: 30, rest: 7 },
-  { name: "Frankenstein Kicks", sets: 3, time: 30, rest: 7 },
-  { name: "Side Lying Hip Abduction", sets: 3, time: 30, rest: 7 },
+  { name: "Hamstring stretch with foot on step", image: "hamstring_foot_on_step.png", sets: 3, time: 30, rest: 7 },
+  { name: "Kneeling Quad Stretch", image: "kneeling_quad.png", sets: 3, time: 30, rest: 7 },
+  { name: "Single Leg Heel Raise", image: "heel_raise.png", sets: 3, time: 30, rest: 7 },
+  { name: "Hip Flexor Stretch", image: "hip_flexor_stretch.png", sets: 3, time: 30, rest: 7 },
+  { name: "Standing Calf Stretch", image: "standing_calf.png", sets: 3, time: 30, rest: 7 },
+  { name: "Quad Pull", image: "quad_pull.png", sets: 3, time: 30, rest: 7 },
+  { name: "Hamstring Dip", image: "hamstring_dip.png", sets: 3, time: 30, rest: 7 },
+  { name: "Frankenstein Kicks", image: "frankenstein_kick.png", sets: 3, time: 30, rest: 7 },
+  { name: "Side Lying Hip Abduction", image: "side_abduction.png", sets: 3, time: 30, rest: 7 },
 ]; // 3 reps * (30 + 7) = 111 seconds, ~2min
 // ~2min * 9 exercises =  ~18min
 
@@ -33,6 +34,7 @@ startButton.addEventListener('click', () => {
   }
   running = !running;
   displayText.textContent = currentExercise.name;
+  image.src = `./assets/${currentExercise.image}`;
   startingTime = Date.now();
 });
 
@@ -79,6 +81,7 @@ const tick = () => {
             currentExerciseIndex++;
             currentExercise = exercises[currentExerciseIndex];
             displayText.textContent = currentExercise.name;
+            image.src = `./assets/${currentExercise.image}`;
           } else {
             displayText.textContent = "you are done";
             running = false;

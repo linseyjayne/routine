@@ -16,7 +16,6 @@ sounds from mixkit.co
 todo list 
 - cute animation
 - colors or styling
-- add images
 
 questions to answer
 - is there a better way to manage state variables in javascript
