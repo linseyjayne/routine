@@ -10,6 +10,10 @@ body {
     width: 100%;
     font-family: Gill Sans, sans-serif;
     background: rgb(135, 137, 192);
+
+      display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
 }
 .header {
     margin: auto;
@@ -31,8 +35,10 @@ body {
     }
 }
 
-.start-button-container {
+.button-container {
+    display: block;
     padding: 16px;
+    margin-top: auto;
 
     button {
         font-size: 24px;

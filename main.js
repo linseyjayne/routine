@@ -33,12 +33,12 @@ startButton.addEventListener('click', () => {
   }
   running = !running;
   displayText.textContent = currentExercise.name;
-  image.src = `./assets/${currentExercise.image}`;
+  image.src = `${ASSET_BASE}/${currentExercise.image}`;
   startingTime = Date.now();
 });
 
 let lastTime = Date.now();
-
+let requestAnimationId;
 const tick = () => {
     const now = Date.now();
     const delta = now - lastTime;
@@ -68,10 +68,7 @@ const tick = () => {
           timeOutput.textContent = "";
 
           if (currentExerciseIndex + 1 < exercises.length) {
-            currentExerciseIndex++;
-            currentExercise = exercises[currentExerciseIndex];
-            displayText.textContent = currentExercise.name;
-            image.src = `./assets/${currentExercise.image}`;
+            goToNextExercise();
           } else {
             displayText.textContent = "you are done";
             running = false;
@@ -82,7 +79,14 @@ const tick = () => {
       }
     }
     
-    requestAnimationFrame(tick);
+    requestAnimationId = requestAnimationFrame(tick);
+}
+
+function goToNextExercise() {
+  currentExerciseIndex++;
+  currentExercise = exercises[currentExerciseIndex];
+  displayText.textContent = currentExercise.name;
+  image.src = `${ASSET_BASE}/${currentExercise.image}`;
 }
 
 function playAttentionBell() {
@@ -92,4 +96,18 @@ function playAttentionBell() {
 function playFairyMagic() {
   document.getElementById("fairyMagic").play();
 }
+
+window.addEventListener('pagehide', () => {
+  console.log('page hide');
+  cancelAnimationFrame(requestAnimationId);
+  currentExerciseIndex = 0;
+  currentExercise = exercises[currentExerciseIndex];
+  running = false; 
+  timer = 0;
+  currentSet = 0;
+  isResting = false;
+  startingTime = null;
+
+});
+
 tick();

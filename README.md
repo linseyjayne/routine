@@ -10,12 +10,15 @@ why is it this way
 - look i did it
 - i wanted to make something simple without giving it away to ai 
 - it didnt take me forever to make a bunch of decisions and i have something i can use now
+- primary use case is for putting on my phone so the styling is not great on large screens
 
 sounds from mixkit.co
-color palette from coolers.co
+color palette from [coolers.co](https://coolors.co/8789c0-45f0df-c2cae8-8380b6-111d4a)
 
 todo list 
+- it's pretty broken if you use browser nav between the demo and home pages without a hard refresh
 - cute animation
+- rest image 
 
 questions to answer
 - is there a better way to manage state variables in javascript
