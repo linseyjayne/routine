@@ -69,6 +69,7 @@ const tick = () => {
 
           if (currentExerciseIndex + 1 < exercises.length) {
             goToNextExercise();
+            playAttentionBell();
           } else {
             displayText.textContent = "you are done";
             running = false;
